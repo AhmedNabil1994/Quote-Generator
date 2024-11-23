@@ -11,12 +11,7 @@ section#quote .card blockquote header {
 }
 section#quote .card blockquote p {
   font-size: 1.375rem;
-  /* test */
- /*  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis; */
 }
-
 section#quote .card-body > p {
   font-size: 1.25rem;
   position: relative;
@@ -30,6 +25,13 @@ section#quote .card-body > p::after {
   left: 0;
   right: 0;
 }
+section#quote .card .image {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: -35px;
+  left: -10px;
+}
 section#quote .card button {
   background-color: #537;
   color: white;
@@ -42,5 +44,8 @@ section#quote .card button:hover {
 @media screen and (max-width: 576px) {
   section#quote .card blockquote p {
     font-size: 1rem;
+  }
+  section#quote .card .image {
+    top: -70px;
   }
 }
