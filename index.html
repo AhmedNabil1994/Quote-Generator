@@ -15,11 +15,11 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-10 col-lg-7">
-            <div class="card text-center bg-white py-4">
+            <article class="card text-center bg-white py-4">
               <h1 class="fw-semibold">Quote of the Day</h1>
               <div class="card-body">
                 <blockquote class="blockquote mb-0">
-                  <header>
+                  <header class="d-flex justify-content-center">
                     <i class="fa fa-quote-left me-2"></i>
                     <p id="quote-text">Your quote will appear here.</p>
                     <i class="fa fa-quote-right align-self-end"></i>
@@ -30,20 +30,24 @@
                     >
                   </footer>
                 </blockquote>
-                <p class="mt-4">
+                <p class="mt-4 h5 position-relative`">
                   Made with
                   <span class="text-danger fa fa-heart"></span> by Nabeel
                 </p>
               </div>
-              <div class="">
-                <button class="btn btn-lg" onclick="getQuote()">
-                  New Quote
+              <div>
+                <button
+                  class="btn btn-lg btn-purple"
+                  id="quote-btn"
+                  onclick="getQuote()"
+                >
+                  Get Quote
                 </button>
               </div>
               <div class="image">
                 <img id="author-image" class="img-fluid rounded-circle" />
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </div>
