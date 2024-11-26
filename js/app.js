@@ -1,3 +1,8 @@
+// elements
+var authorQuote = document.getElementById("author-quote");
+var authorName = document.getElementById("author-name");
+var authorImage = document.getElementById("author-image");
+// arrays
 var authors = [
   {
     name: "Oscar Wilde",
@@ -50,33 +55,29 @@ var authors = [
     image: "image_10",
   },
 ];
-var usedIndex = -1;
+var usedQuotes = [];
+
 /**
  * function to generate quote text
  * ,Author name, and Author Image
  */
+
 function getQuote() {
-  changeBtnText()
+  changeBtnText();
   var generatedIndex;
-  /*  this loop ensure that no repetation
-      keep generating random indices
-      if the used and generated indices are the same
-      if they are different , exit the loop and display the quotes
-  */
+  if (usedQuotes.length === authors.length) {
+    usedQuotes = [];
+  }
   do {
     generatedIndex = Math.floor(Math.random() * authors.length);
-  } while (generatedIndex === usedIndex);
-  usedIndex = generatedIndex;
-  document.getElementById("quote-text").innerText =
-    authors[generatedIndex].quote;
-  document.getElementById("quote-author").innerText =
-    authors[generatedIndex].name;
-  document.getElementById(
-    "author-image"
-  ).src = `./images/${authors[generatedIndex].image}.jpg`;
-  document.getElementById("author-image").alt = authors[generatedIndex].image;
+  } while (usedQuotes.includes(generatedIndex));
+  usedQuotes.push(generatedIndex);
+  authorQuote.innerText = authors[generatedIndex].quote;
+  authorName.innerText = authors[generatedIndex].name;
+  authorImage.src = `./images/${authors[generatedIndex].image}.jpg`;
+  authorImage.alt = authors[generatedIndex].image;
 }
 
-function changeBtnText () {
+function changeBtnText() {
   document.getElementById("quote-btn").innerText = "New Quote";
 }
